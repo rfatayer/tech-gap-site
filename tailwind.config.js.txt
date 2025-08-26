@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  @type {import('tailwindcss').Config} 
 module.exports = {
   content [
@@ -9,3 +10,16 @@ module.exports = {
   },
   plugins [],
 }
+=======
+ @type {import('tailwindcss').Config} 
+module.exports = {
+  content [
+    .app.{js,ts,jsx,tsx},
+    .components.{js,ts,jsx,tsx}
+  ],
+  theme {
+    extend {},
+  },
+  plugins [],
+}
+>>>>>>> 1d7aa7d (Update site colors to Paltex branding)
