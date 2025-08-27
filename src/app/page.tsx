@@ -11,10 +11,24 @@ export default function Home() {
       <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-sm">
         <img src="/logo.png" alt="Paltex Logo" className="h-20" />
         <div className="space-x-6">
-          <a href="#services" className="hover:text-blue-600">Services</a>
-          <a href="#about" className="hover:text-blue-600">About</a>
-          <a href="#contact" className="hover:text-blue-600">Contact</a>
-        </div>
+  {[
+    { href: '#services', label: 'Services' },
+    { href: '#about', label: 'About' },
+    { href: '#contact', label: 'Contact' },
+  ].map((link, idx) => (
+    <a
+      key={idx}
+      href={link.href}
+      className="transition-colors"
+      style={{ color: '#333' }}
+      onMouseEnter={(e) => (e.currentTarget.style.color = '#0091B2')}
+      onMouseLeave={(e) => (e.currentTarget.style.color = '#333')}
+    >
+      {link.label}
+    </a>
+  ))}
+</div>
+
       </nav>
 
       {/* Hero Section */}
@@ -32,12 +46,14 @@ export default function Home() {
           We partner with businesses to build tailored technology solutions,
           using skilled teams and innovative approaches to deliver results.
         </p>
-        <a
-          href="#contact"
-          className="px-6 py-3 rounded-2xl bg-white text-blue-600 font-semibold shadow-lg hover:bg-gray-100"
-        >
-          Let’s Talk
-        </a>
+  <a
+  href="#contact"
+  className="px-6 py-3 rounded-2xl bg-white font-semibold shadow-lg hover:bg-gray-100"
+  style={{ color: '#214B71' }}
+>
+  Let’s Talk
+</a>
+
       </section>
 
       {/* Services Section */}
@@ -52,7 +68,8 @@ export default function Home() {
             { icon: Hammer, title: "Product Development", desc: "From concept to launch, we build products that deliver impact." },
           ].map((service, idx) => (
             <div key={idx} className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
-              <service.icon className="text-blue-600 w-12 h-12 mb-4" />
+              <service.icon style={{ color: '#214B71' }} className="w-12 h-12 mb-4" />
+
               <h4 className="font-bold text-lg mb-2">{service.title}</h4>
               <p className="text-gray-600">{service.desc}</p>
             </div>
@@ -78,14 +95,29 @@ export default function Home() {
         <p className="text-gray-600 mb-8">
           Let’s discuss how we can help bridge your business technology gaps.
         </p>
-        <div className="flex flex-col md:flex-row justify-center gap-6">
-          <a href="mailto:r_fatayer@hotmail.com" className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-md">
-            <Mail className="w-5 h-5" /> r_fatayer@hotmail.com
-          </a>
-          <a href="tel:+61402185181" className="flex items-center gap-2 px-6 py-3 bg-gray-200 text-gray-800 rounded-xl hover:bg-gray-300 shadow-md">
-            <Phone className="w-5 h-5" /> +61 402 185 181
-          </a>
-        </div>
+<div className="flex flex-col md:flex-row justify-center gap-6">
+  {/* Email Button */}
+  <a
+    href="mailto:r_fatayer@hotmail.com"
+    className="flex items-center gap-2 px-6 py-3 text-white rounded-xl shadow-md"
+    style={{ backgroundColor: '#1D3C5F' }}
+    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0091B2')}
+    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#214B71')}
+  >
+    <Mail className="w-5 h-5" /> r_fatayer@hotmail.com
+  </a>
+
+  {/* Phone Button */}
+  <a
+    href="tel:+61402185181"
+    className="flex items-center gap-2 px-6 py-3 text-white rounded-xl shadow-md"
+    style={{ backgroundColor: '#1D3C5F' }}
+    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0091B2')}
+    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#214B71')}
+  >
+    <Phone className="w-5 h-5" /> +61 402 185 181
+  </a>
+</div>
       </section>
 
       {/* Footer */}
