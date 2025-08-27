@@ -40,7 +40,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-5xl font-extrabold mb-6"
         >
-          Bridging Your Business Tech Gaps
+          Empowering Your Business Through Purpose-Built Tech
         </motion.h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto">
           We partner with businesses to build tailored technology solutions,
