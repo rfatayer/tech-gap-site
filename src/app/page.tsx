@@ -18,7 +18,8 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="px-8 py-24 text-center bg-gradient-to-r from-blue-600 to-cyan-400 text-white">
+      <section className="px-8 py-24 text-center bg-gradient-to-r from-[#1D3C5F] to-cyan-400 text-white">
+
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
