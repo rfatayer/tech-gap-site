@@ -95,18 +95,29 @@ export default function Home() {
         <p className="text-gray-600 mb-8">
           Let’s discuss how we can help bridge your business technology gaps.
         </p>
-        <div className="flex flex-col md:flex-row justify-center gap-6">
-         <a
-  href="mailto:r_fatayer@hotmail.com"
-  className="flex items-center gap-2 px-6 py-3 text-white rounded-xl shadow-md"
-  style={{ backgroundColor: '#214B71' }}
-  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0091B2')}
-  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#214B71')}
->
-  <Mail className="w-5 h-5" /> r_fatayer@hotmail.com
-</a>
+<div className="flex flex-col md:flex-row justify-center gap-6">
+  {/* Email Button */}
+  <a
+    href="mailto:r_fatayer@hotmail.com"
+    className="flex items-center gap-2 px-6 py-3 text-white rounded-xl shadow-md"
+    style={{ backgroundColor: '#1D3C5F' }}
+    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0091B2')}
+    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#214B71')}
+  >
+    <Mail className="w-5 h-5" /> r_fatayer@hotmail.com
+  </a>
 
-        </div>
+  {/* Phone Button */}
+  <a
+    href="tel:+61402185181"
+    className="flex items-center gap-2 px-6 py-3 text-white rounded-xl shadow-md"
+    style={{ backgroundColor: '#1D3C5F' }}
+    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0091B2')}
+    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#214B71')}
+  >
+    <Phone className="w-5 h-5" /> +61 402 185 181
+  </a>
+</div>
       </section>
 
       {/* Footer */}
