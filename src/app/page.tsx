@@ -62,18 +62,22 @@ export default function Home() {
           Our Services
         </h3>
         <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { icon: Cpu, title: "Custom Tech Solutions", desc: "End-to-end software and systems tailored to your business." },
-            { icon: Users, title: "Dedicated Teams", desc: "Access to top-tier technical talent from Palestine." },
-            { icon: Hammer, title: "Product Development", desc: "From concept to launch, we build products that deliver impact." },
-          ].map((service, idx) => (
-            <div key={idx} className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
-              <service.icon style={{ color: '#214B71' }} className="w-12 h-12 mb-4" />
+      {[
+  { icon: Cpu, title: "Custom Tech Solutions", desc: "End-to-end software and systems tailored to your business.", id: "custom-tech" },
+  { icon: Users, title: "Dedicated Teams", desc: "Access to top-tier technical talent from Palestine.", id: "dedicated-teams" },
+  { icon: Hammer, title: "Product Development", desc: "From concept to launch, we build products that deliver impact.", id: "product-development" },
+].map((service, idx) => (
+  <a 
+    key={idx} 
+    href={`/services#${service.id}`} 
+    className="block bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition"
+  >
+    <service.icon style={{ color: '#214B71' }} className="w-12 h-12 mb-4" />
+    <h4 className="font-bold text-lg mb-2">{service.title}</h4>
+    <p className="text-gray-600">{service.desc}</p>
+  </a>
+))}
 
-              <h4 className="font-bold text-lg mb-2">{service.title}</h4>
-              <p className="text-gray-600">{service.desc}</p>
-            </div>
-          ))}
         </div>
       </section>
 
