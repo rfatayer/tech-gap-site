@@ -1,35 +1,85 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react"; // icons for mobile menu
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
-      {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-sm">
-        <Link href="/">
-          <img
-            src="/logo.png"
-            alt="Paltex Logo"
-            className="h-20 cursor-pointer"
-          />
-        </Link>
-        <div className="space-x-6">
-          <a href="/#services" className="hover:text-blue-600">Services</a>
-          <a href="/#about" className="hover:text-blue-600">About</a>
-          <a href="/#contact" className="hover:text-blue-600">Contact</a>
-        </div>
-      </nav>
+  const [isOpen, setIsOpen] = useState(false);
 
-      {/* Main content */}
-      <main className="flex-1">{children}</main>
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
+      <header className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div className="w-full px-6 py-4 flex items-center justify-between">
+          {/* Logo flush left */}
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={160}
+              height={40}
+              className="h-16 w-auto"
+            />
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex space-x-6">
+            <Link href="/" className="text-gray-700 hover:text-blue-600">
+              Home
+            </Link>
+            <Link href="/services" className="text-gray-700 hover:text-blue-600">
+              Services
+            </Link>
+            <a href="#contact" className="text-gray-700 hover:text-blue-600">
+              Contact
+            </a>
+          </nav>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-gray-700"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile dropdown */}
+        {isOpen && (
+          <div className="md:hidden bg-white shadow-md px-6 py-4 space-y-4">
+            <Link
+              href="/"
+              className="block text-gray-700 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href="/services"
+              className="block text-gray-700 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              Services
+            </Link>
+            <a
+              href="#contact"
+              className="block text-gray-700 hover:text-blue-600"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </a>
+          </div>
+        )}
+      </header>
+
+      {/* Page Content */}
+      <main className="flex-1 pt-24">{/* padding for fixed header */ children}</main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 text-center py-6">
-        <p className="mb-2">© {new Date().getFullYear()} Paltex</p>
-        <p className="text-sm">ABN: 635 735 698</p>
+      <footer className="bg-gray-100 py-6 text-center text-gray-600 text-sm">
+        © {new Date().getFullYear()} Paltex. All rights reserved.
       </footer>
     </div>
   );
