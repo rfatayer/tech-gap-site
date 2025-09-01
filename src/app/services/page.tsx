@@ -29,7 +29,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-<div id="custom-tech" className="mb-16">
+<div id="dedicated-teams" className="mb-16">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <Users className="text-[#214B71] w-16 h-16 flex-shrink-0" />
             <div>
@@ -46,7 +46,7 @@ export default function Services() {
           </div>
         </div>
 
-<div id="custom-tech" className="mb-16">
+<div id="product-development" className="mb-16">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <Hammer className="text-[#214B71] w-16 h-16 flex-shrink-0" />
             <div>

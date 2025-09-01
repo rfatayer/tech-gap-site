@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/" className="text-gray-700 hover:text-blue-600">
               Home
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-blue-600">
+            <Link href="#services" className="text-gray-700 hover:text-blue-600">
               Services
             </Link>
             <a href="#contact" className="text-gray-700 hover:text-blue-600">

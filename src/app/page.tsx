@@ -23,13 +23,7 @@ export default function Home() {
           We partner with businesses to build tailored technology solutions,
           using skilled teams and innovative approaches to deliver results.
         </p>
-  <a
-  href="#contact"
-  className="px-6 py-3 rounded-2xl bg-white font-semibold shadow-lg hover:bg-gray-100"
-  style={{ color: '#214B71' }}
->
-  Let’s Talk
-</a>
+
 
       </section>
 
@@ -41,14 +35,15 @@ export default function Home() {
         </h3>
         <div className="grid md:grid-cols-3 gap-8">
       {[
-  { icon: Cpu, title: "Custom Tech Solutions", desc: "End-to-end software and systems tailored to your business..", id: "custom-tech" },
-  { icon: Users, title: "Dedicated Teams", desc: "Access to top-tier technical talent..", id: "dedicated-teams" },
-  { icon: Hammer, title: "Product Development", desc: "From concept to launch, we build products that deliver impact..", id: "product-development" },
+  { icon: Cpu, title: "Custom Tech Solutions", desc: "...", id: "custom-tech" },
+  { icon: Users, title: "Dedicated Teams", desc: "...", id: "dedicated-teams" },
+  { icon: Hammer, title: "Product Development", desc: "...", id: "product-development" },
 ].map((service, idx) => (
-  <a 
-    key={idx} 
-    href={`/services#${service.id}`} 
+  <a
+    key={idx}
+    href={`/services#${service.id}`}
     className="block bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition"
+    id={service.id} // ✅ Add this line
   >
     <service.icon style={{ color: '#214B71' }} className="w-12 h-12 mb-4" />
     <h4 className="font-bold text-lg mb-2">{service.title}</h4>
