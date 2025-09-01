@@ -2,36 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, Cpu, Users, Hammer, Mail, Phone } from "lucide-react";
+import { Cpu, Users, Hammer, Mail, Phone } from "lucide-react";
+import Layout from "@/components/Layout"; // ✅ import your Layout
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
-      {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-sm">
-        <img src="/logo.png" alt="Paltex Logo" className="h-20" />
-        <div className="space-x-6">
-  {[
-    { href: '#services', label: 'Services' },
-    { href: '#about', label: 'About' },
-    { href: '#contact', label: 'Contact' },
-  ].map((link, idx) => (
-    <a
-      key={idx}
-      href={link.href}
-      className="transition-colors"
-      style={{ color: '#333' }}
-      onMouseEnter={(e) => (e.currentTarget.style.color = '#0091B2')}
-      onMouseLeave={(e) => (e.currentTarget.style.color = '#333')}
-    >
-      {link.label}
-    </a>
-  ))}
-</div>
-
-      </nav>
-
-      {/* Hero Section */}
+    <Layout>
+ {/* Hero Section */}
       <section className="px-8 py-24 text-center bg-gradient-to-r from-[#1D3C5F] to-cyan-400 text-white">
 
         <motion.h2
@@ -56,6 +33,7 @@ export default function Home() {
 
       </section>
 
+
       {/* Services Section */}
       <section id="services" className="px-8 py-20 max-w-6xl mx-auto">
         <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
@@ -63,9 +41,9 @@ export default function Home() {
         </h3>
         <div className="grid md:grid-cols-3 gap-8">
       {[
-  { icon: Cpu, title: "Custom Tech Solutions", desc: "End-to-end software and systems tailored to your business.", id: "custom-tech" },
-  { icon: Users, title: "Dedicated Teams", desc: "Access to top-tier technical talent from Palestine.", id: "dedicated-teams" },
-  { icon: Hammer, title: "Product Development", desc: "From concept to launch, we build products that deliver impact.", id: "product-development" },
+  { icon: Cpu, title: "Custom Tech Solutions", desc: "End-to-end software and systems tailored to your business..", id: "custom-tech" },
+  { icon: Users, title: "Dedicated Teams", desc: "Access to top-tier technical talent..", id: "dedicated-teams" },
+  { icon: Hammer, title: "Product Development", desc: "From concept to launch, we build products that deliver impact..", id: "product-development" },
 ].map((service, idx) => (
   <a 
     key={idx} 
@@ -81,19 +59,20 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* About Section */}
       <section id="about" className="px-8 py-20 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-6 text-gray-900">About Us</h3>
           <p className="text-gray-700 leading-relaxed">
-            At Paltex, we help businesses identify and overcome technical challenges. 
-            By leveraging expert teams and innovative methods, we create scalable solutions that 
-            empower growth and efficiency.
+            At Paltex, we help businesses identify and overcome technical challenges.
+            By leveraging expert teams and innovative methods, we create scalable
+            solutions that empower growth and efficiency.
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
+       {/* Contact Section */}
       <section id="contact" className="px-8 py-20 max-w-4xl mx-auto text-center">
         <h3 className="text-3xl font-bold mb-6 text-gray-900">Get in Touch</h3>
         <p className="text-gray-600 mb-8">
@@ -124,11 +103,7 @@ export default function Home() {
 </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 text-center py-6">
-        <p className="mb-2">© {new Date().getFullYear()} Paltex</p>
-        <p className="text-sm">ABN: 635 735 698</p>
-      </footer>
-    </div>
+
+    </Layout>
   );
 }
