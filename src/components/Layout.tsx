@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               alt="Logo"
               width={160}
               height={40}
-              className="h-16 w-auto"
+              className="h-18 w-auto"
             />
           </Link>
 
@@ -63,13 +63,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             >
               Services
             </Link>
-            <a
-              href="#contact"
-              className="block text-gray-700 hover:text-blue-600"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </a>
+        import Link from "next/link";
+
+<Link
+  href="/#contact"
+  className="block text-gray-700 hover:text-blue-600"
+  onClick={() => setIsOpen(false)}
+>
+  Contact
+</Link>
           </div>
         )}
       </header>
